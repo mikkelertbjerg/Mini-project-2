@@ -1,4 +1,10 @@
 # Mini project 2
+
+# Preparing the data
+
+# Selecting the database operations
+
+# Comparison criteria
  
 ## Neo4j
 
