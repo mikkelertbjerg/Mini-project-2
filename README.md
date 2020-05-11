@@ -24,7 +24,7 @@ Write short about Neo4j
 ```graph
 LOAD CSV FROM 'file:///dataset.csv' AS row
 WITH toInteger(row[0]) AS productId, row[1] AS productName, toFloat(row[2]) AS unitCost, row[3] AS ProductCatagory
-MERGE (p:Product {productId: productId})
+CREATE (p:Product)
   SET p.productName = productName, p.unitCost = unitCost, p.productCatagory = ProductCatagory
 RETURN count(p)
 ```
