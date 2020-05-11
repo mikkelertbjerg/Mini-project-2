@@ -13,11 +13,14 @@ In order to make a fair comparison, a somewhat random dataset was generated usin
  * Inserting data. (In our case, 300.000+ items at one time.)
  * Retrieving data.
 ## Neo4j
-
+Write short about Neo4j
 ### Benchmarks
 
 #### Import/Insert
-308000 Lines - 144.15 seconds (2 Minutes and 24 seconds)
+
+// NOTE: Skriv noget om MERGE i stedet for CREATE.
+
+308000 Lines - 924000 Properties - 2073ms
 ```graph
 LOAD CSV FROM 'file:///dataset.csv' AS row
 WITH toInteger(row[0]) AS productId, row[1] AS productName, toFloat(row[2]) AS unitCost, row[3] AS ProductCatagory
@@ -26,7 +29,12 @@ MERGE (p:Product {productId: productId})
 RETURN count(p)
 ```
 
+#### Retrieve/Get
+
+
+
 ## Redis
+Write short about redis
 ### Benchmarks
 
 #### Import/Insert
@@ -71,4 +79,11 @@ print(f"total time: {time.time() - now} Time Only on retrieval of values: {time.
 ```
 
 # Misc
+Technical specifications of the machine tested on:
+* CPU: I7-6700K @ 
+* GPU: NVIDIA 1070 GTX
+* Memory: 32GB 2133mHz
+* OS: Windows 10 (64-bit)
+* Hard Drive: M.2 SSD
+
 [Dataset](misc/dataset.csv)
