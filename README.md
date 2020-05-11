@@ -6,7 +6,7 @@ In order to make a fair comparison, a somewhat random dataset was generated usin
 
 ## Selecting the database operations
 
-# Comparison criteria
+## Comparison criteria
  To compare the 2 NoSQL databases we've chosen, we decided to run different benchmarks on them, primarily comparing time spent to complete a given task.  
  
  We'll be looking into the following:
