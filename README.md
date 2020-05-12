@@ -12,8 +12,32 @@ In order to make a fair comparison, a somewhat random dataset was generated usin
  We'll be looking into the following:
  * Inserting data. (In our case, 300.000+ items at one time.)
  * Retrieving data.
-## Neo4j
-Write short about Neo4j
+
+## [CAP Theorem](https://en.wikipedia.org/wiki/CAP_theorem)
+>In theoretical computer science, the CAP theorem, also named Brewer's theorem after computer scientist Eric Brewer, states that it is impossible for a distributed data store to simultaneously provide more than two out of the following three guarantees:
+>* Consistency: Every read receives the most recent write or an error
+>* Availability: Every request receives a (non-error) response, without the guarantee that it 
+contains the most recent write
+>* Partition tolerance: The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes
+
+[Wikipedia](https://en.wikipedia.org/wiki/CAP_theorem)
+
+**Neo4j** is a bit tricky to place in this theorem, as there can be made an argument saying Neo4j isn't a distributed database, hence it does not fit in the theorem. Sharding is not available, however there are two clustering modes available in the enterprise edition. If Neo4j was to be placed in the theorem it would arguably be missing consistency, which often is the tradeoff with nosql databases.
+
+**Redis** on the other hand, despite being a nosql database, is missing [availability](https://aphyr.com/posts/283-jepsen-redis), which makes perfectly good sense, seeing as the database per default only exsists in memory unless active action is taken to do otherwise.
+
+## [ACID](https://en.wikipedia.org/wiki/ACID)
+>In computer science, ACID (atomicity, consistency, isolation, durability) is a set of properties of database transactions intended to guarantee validity even in the event of errors, power failures, etc. In the context of databases, a sequence of database operations that satisfies the ACID properties (and these can be perceived as a single logical operation on the data) is called a transaction. For example, a transfer of funds from one bank account to another, even involving multiple changes such as debiting one account and crediting another, is a single transaction.
+
+[Wikipedia](https://en.wikipedia.org/wiki/ACID)
+
+**Neo4j** is fully ACID compliant, and full overview on Neo4j ACID overview can be found [here](https://www.graphgrid.com/neo4j-is-designed-to-be-your-source-of-truth-database/)
+
+**Redis** unlike Neo4j is not [ACID compliant](https://stackoverflow.com/questions/14682470/redis-and-data-integrity), and is not intended to be either. Action can be taken trough lua scripting to achieve ACID like features, but they are not shipped out of the box.
+
+## [Neo4j](https://neo4j.com)
+Neo4j is a graph database which is truly relational, as they explain it themselves. The data is structured like a graph, which means nodes hold data about them selves, whilst the relationship between nodes describes their purpose and/or relations, as implied. This makes graph databases, Neo4j included, highly efficient at certain tasks. It's great for spotting tendencies in data, which were otherwise not obvious, and is also greatly suited for fraud detection, because of previous mentioned fact. Furthermore Neo4j is fast, because it doesn't have to itterate trough all the nodes to find a specific one, it's a direct lookup.
+
 ### Benchmarks
 
 #### Import/Insert
@@ -33,7 +57,7 @@ RETURN count(p)
 
 
 
-## Redis
+## [Redis](https://redis.io)
 Write short about redis
 ### Benchmarks
 
