@@ -34,7 +34,8 @@ RETURN count(p)
 
 
 ## Redis
-Write short about redis
+Redis is an open-source alternative, you can use as a NoSQL Database. Instead of saving the data locally on the hard drive, it's got a in-memory data structure store, has got the functionality to save it on the hard drive if needed though. Redis supports data structures such as strings, hashes, lists etc. 
+
 ### Benchmarks
 
 #### Import/Insert
