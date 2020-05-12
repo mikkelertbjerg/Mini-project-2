@@ -61,7 +61,9 @@ RETURN count(p)
 ```
 
 #### Retrieve/Get
+We were only able to attempt retrievel from the Neo4j Gui. We used the cypher `MATCH(n) RETURN n`. When using this command the GUI spends more than 7 minutes on retrieving the data, unfortunatly it wont return a specific time, so we are gonna have to use aproximates.
 
+We have attempted to use the Neo4j CLI and attempted to access the database Via code such as python, but we keep getting decline on authorization despite providing the correct password.
 
 
 ## Redis
