@@ -112,3 +112,4 @@ Technical specifications of the machine tested on:
 * Hard Drive: M.2 SSD
 
 [Dataset](misc/dataset.csv)
+[Nathan Hurst about NoSQL Systems](https://blog.nahurst.com/visual-guide-to-nosql-systems)
