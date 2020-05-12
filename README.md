@@ -5,6 +5,13 @@
 In order to make a fair comparison, a somewhat random dataset was generated using [Mockaroo](https://mockaroo.com). Leading up to the exam project, an initial draft for the exam project was made, and the data generated here should emulate one of the classes used in the exam project. Hence the data is products, with no relations or references, only fields.
 
 ## Selecting the database operations
+We have chosen to compare two noSQL databases namely Redis and graph. These two databases whilst both being noSQL, are completely different.
+
+graph database works with relationships between nodes and Redis uses KvP and keep no record of relationships. Because of this choice it becomes hard to compare these two databases in any complex way. Had we wanted to compare something more in depth, we would have chosen to compare a postgres database and a graph database. We would have made a bunch of tables with relations to eachother and make nested calls, likewise in graph, we would create some deep relations and compare these the capabilities to retrieve deeply nested relations.
+
+However we wanted to test the speed between redis and neo4j as that is a question we have been pondering among ourselves, and we intend to use both databases for our exam and want to build proper support for our choices.
+
+As such we ended up with the comparison criteria below.
 
 ## Comparison criteria
  To compare the 2 NoSQL databases we've chosen, we decided to run different benchmarks on them, primarily comparing time spent to complete a given task.  
