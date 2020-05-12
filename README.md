@@ -5,7 +5,7 @@
 In order to make a fair comparison, a somewhat random dataset was generated using [Mockaroo](https://mockaroo.com). Leading up to the exam project, an initial draft for the exam project was made, and the data generated here should emulate one of the classes used in the exam project. Hence the data is products, with no relations or references, only fields.
 
 ## Selecting the database operations
-We have chosen to compare two noSQL databases namely Redis and graph. These two databases whilst both being noSQL, are completely different.
+We have chosen to compare two NoSQL databases namely Redis and graph. These two databases whilst both being NoSQL, are completely different.
 
 graph database works with relationships between nodes and Redis uses KvP and keep no record of relationships. Because of this choice it becomes hard to compare these two databases in any complex way. Had we wanted to compare something more in depth, we would have chosen to compare a postgres database and a graph database. We would have made a bunch of tables with relations to eachother and make nested calls, likewise in graph, we would create some deep relations and compare these the capabilities to retrieve deeply nested relations.
 
@@ -29,9 +29,9 @@ contains the most recent write
 
 [Wikipedia](https://en.wikipedia.org/wiki/CAP_theorem)
 
-**Neo4j** is a bit tricky to place in this theorem, as there can be made an argument saying Neo4j isn't a distributed database, hence it does not fit in the theorem. Sharding is not available, however there are two clustering modes available in the enterprise edition. If Neo4j was to be placed in the theorem it would arguably be missing consistency, which often is the tradeoff with nosql databases.
+**Neo4j** is a bit tricky to place in this theorem, as there can be made an argument saying Neo4j isn't a distributed database, hence it does not fit in the theorem. Sharding is not available, however there are two clustering modes available in the enterprise edition. If Neo4j was to be placed in the theorem it would arguably be missing consistency, which often is the tradeoff with NoSQL databases.
 
-**Redis** on the other hand, despite being a nosql database, is missing [availability](https://aphyr.com/posts/283-jepsen-redis), which makes perfectly good sense, seeing as the database per default only exsists in memory unless active action is taken to do otherwise.
+**Redis** on the other hand, despite being a NoSQL database, is missing [availability](https://aphyr.com/posts/283-jepsen-redis), which makes perfectly good sense, seeing as the database per default only exists in memory unless active action is taken to do otherwise.
 
 ## [ACID](https://en.wikipedia.org/wiki/ACID)
 >In computer science, ACID (atomicity, consistency, isolation, durability) is a set of properties of database transactions intended to guarantee validity even in the event of errors, power failures, etc. In the context of databases, a sequence of database operations that satisfies the ACID properties (and these can be perceived as a single logical operation on the data) is called a transaction. For example, a transfer of funds from one bank account to another, even involving multiple changes such as debiting one account and crediting another, is a single transaction.
@@ -49,8 +49,6 @@ Neo4j is a graph database which is truly relational, as they explain it themselv
 
 #### Import/Insert
 
-// NOTE: Skriv noget om MERGE i stedet for CREATE.
-
 308000 Lines - 924000 Properties - 2073ms
 ```graph
 LOAD CSV FROM 'file:///dataset.csv' AS row
@@ -61,7 +59,7 @@ RETURN count(p)
 ```
 
 #### Retrieve/Get
-We were only able to attempt retrievel from the Neo4j Gui. We used the cypher `MATCH(n) RETURN n`. When using this command the GUI spends more than 7 minutes on retrieving the data, unfortunatly it wont return a specific time, so we are gonna have to use aproximates.
+We were only able to attempt retrievel from the Neo4j Gui. We used the cypher `MATCH(n) RETURN n`. When using this command the GUI spends more than 7 minutes on retrieving the data, unfortunatly it won't return a specific time, so we are gonna have to use aproximates.
 
 We have attempted to use the Neo4j CLI and attempted to access the database Via code such as python, but we keep getting decline on authorization despite providing the correct password.
 
@@ -120,5 +118,5 @@ Technical specifications of the machine tested on:
 * OS: Windows 10 (64-bit)
 * Hard Drive: M.2 SSD
 
-[Dataset](misc/dataset.csv)
+[Dataset](misc/dataset.csv)  
 [Nathan Hurst about NoSQL Systems](https://blog.nahurst.com/visual-guide-to-nosql-systems)
